@@ -1,0 +1,44 @@
+How to run the game
+ 
+You need to install getch pip install getch
+
+In master :
+
+• roscore 
+• rosrun turtlesim turtlesim_node
+• rosrun my_turtle_fight spawn_turtles.py
+• rosservice call /spawn 6.0 4.0 0.0 "turtle5" #if you need more turtles
+• rosrun my_turtle_fight health_node.py
+
+in 1st slave :
+
+• rosrun my_turtle_fight keyboard.py __name:=keyboard1 turtle=turtle1
+• rosrun my_turtle_fight turtle_movement.py __name:=turtle1_movement 
+turtle=turtle1
+• rosrun my_turtle_fight attack_node.py __name:=attack_node1 
+turtle=turtle1
+
+in 2nd slave :
+
+• rosrun my_turtle_fight keyboard.py __name:=keyboard2 turtle=turtle2
+• rosrun my_turtle_fight turtle_movement.py __name:=turtle2_movement 
+turtle=turtle2
+• rosrun my_turtle_fight attack_node.py __name:=attack_node2
+turtle=turtle2
+
+in 3rd slave :
+
+• rosrun my_turtle_fight keyboard.py __name:=keyboard3
+turtle=turtle3
+• rosrun my_turtle_fight turtle_movement.py 
+__name:=turtle3_movement turtle=turtle3
+• rosrun my_turtle_fight attack_node.py __name:=attack_node3
+turtle=turtle3
+
+in 4th slave : 
+
+• rosrun my_turtle_fight keyboard.py __name:=keyboard4 turtle=turtle4
+• rosrun my_turtle_fight turtle_movement.py __name:=turtle4_movement 
+turtle=turtle4
+• rosrun my_turtle_fight attack_node.py __name:=attack_node4
+turtle=turtle4
