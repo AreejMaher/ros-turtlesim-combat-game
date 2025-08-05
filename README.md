@@ -104,13 +104,6 @@ rosrun turtlesim turtlesim_node
 # In another new terminal, spawn the initial turtles
 rosrun my_turtle_fight spawn_turtles.py
 ```
-
-**Optional:** To add more turtles manually (up to 5 total):
-```bash
-# Add turtle5 at position (6.0, 4.0)
-rosservice call /spawn 6.0 4.0 0.0 "turtle5"
-```
-
 ```bash
 # In another new terminal, start the health management node
 rosrun my_turtle_fight health_node.py
@@ -190,25 +183,6 @@ rosrun my_turtle_fight turtle_movement.py __name:=turtle4_movement turtle:=turtl
 ```bash
 # Terminal 3: Attack controller for Turtle 4
 rosrun my_turtle_fight attack_node.py __name:=attack_node4 turtle:=turtle4
-```
-
-### 8. Launch Player 5 Controls (Slave Device 4) - Optional
-
-If using a fifth player, run the following commands. Each command should be run in a separate terminal.
-
-```bash
-# Terminal 1: Keyboard input for Turtle 5
-rosrun my_turtle_fight keyboard.py __name:=keyboard5 turtle:=turtle5
-```
-
-```bash
-# Terminal 2: Movement controller for Turtle 5
-rosrun my_turtle_fight turtle_movement.py __name:=turtle5_movement turtle:=turtle5
-```
-
-```bash
-# Terminal 3: Attack controller for Turtle 5
-rosrun my_turtle_fight attack_node.py __name:=attack_node5 turtle:=turtle5
 ```
 
 ## 🎮 Game Rules & Controls
